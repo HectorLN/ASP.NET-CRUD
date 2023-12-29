@@ -59,6 +59,7 @@
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <link rel="stylesheet" runat="server" media="screen" href="estilo.css" />
             </asp:ContentPlaceHolder>
             <hr />
             <footer>

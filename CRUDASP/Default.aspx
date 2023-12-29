@@ -1,42 +1,54 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CRUDASP._Default" %>
 
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+    <link href="Content/boostrap.css" rel="stylesheet" type="text/css" />
+    <main>
+        <hr />
+        <article>
+            <section class="barra-lateral">
+            </section>
+            <section class="barra-superior">
+            </section>
+            <section class="barra-inferior">
+            </section>
+            <section class="barra-principal">
+                <telerik:RadFormDecorator RenderMode="Lightweight" ID="RadFormDecorator1" runat="server" DecorationZoneID="demo" DecoratedControls="All" EnableRoundedCorners="false" />
+                <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+                    <AjaxSettings>
+                        <telerik:AjaxSetting AjaxControlID="RadGrid1">
+                            <UpdatedControls>
+                                <telerik:AjaxUpdatedControl ControlID="RadGrid1"></telerik:AjaxUpdatedControl>
+                            </UpdatedControls>
+                        </telerik:AjaxSetting>
+                    </AjaxSettings>
+                </telerik:RadAjaxManager>
+                <div class="d-flex align-items-center" style="background-color: blanchedalmond; opacity: 0.5; height: 100%">
+                    <div style="background-color: aliceblue; height:fit-content">
+                        <telerik:RadGrid RenderMode="Lightweight" AllowSorting="True" AllowAutomaticInserts="True" ID="RadGrid1" runat="server"></telerik:RadGrid>
+                        <div class="p-2">
+                            <telerik:RadColorPicker ID="RadColorPicker1" runat="server"></telerik:RadColorPicker>
+                        </div>
+                        
+                    </div>
+                </div>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+                <telerik:RadInputManager RenderMode="Lightweight" runat="server" ID="RadInputManager1" Enabled="true">
+                    <telerik:TextBoxSetting BehaviorID="TextBoxSetting1">
+                    </telerik:TextBoxSetting>
+                    <telerik:TextBoxSetting BehaviorID="TextBoxSetting1">
+                    </telerik:TextBoxSetting>
+                </telerik:RadInputManager>
+                <telerik:RadWindowManager RenderMode="Lightweight" ID="RadWindowManager1" runat="server" />
+            </section>
+        </article>
+
+    </main>
+
+
 
 </asp:Content>
