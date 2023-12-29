@@ -15,6 +15,15 @@ namespace CRUDASP
     {
 
         /// <summary>
+        /// RadScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+
+        /// <summary>
         /// RadFormDecorator1 control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace CRUDASP
         protected global::Telerik.Web.UI.RadGrid RadGrid1;
 
         /// <summary>
-        /// RadColorPicker1 control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadColorPicker RadColorPicker1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
         /// RadInputManager1 control.
