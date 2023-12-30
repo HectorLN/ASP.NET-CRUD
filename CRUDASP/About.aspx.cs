@@ -11,7 +11,12 @@ namespace CRUDASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["LoggedIn"] != null)
+            {
+                //Creacion de sesion con usuario validado
+                string LoggedUser = Session["LoggedIn"].ToString();
+                welcomeMsg.Text = ("Bienvenido/a " + LoggedUser);
+            }
         }
     }
 }
