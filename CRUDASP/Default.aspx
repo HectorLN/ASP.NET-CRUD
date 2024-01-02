@@ -30,11 +30,12 @@
                 Contraseña:
             </telerik:RadLabel>
             <%-- Textbox de la contraseña --%>
-            <telerik:RadTextBox ID="txt_contraseña" runat="server" LabelWidth="64px" Resize="None" Width="160px" TextMode="Password" OnTextChanged="txt_contraseña_TextChanged">
+            <telerik:RadTextBox ID="txt_contraseña" runat="server" LabelWidth="64px" Resize="None" Width="160px" TextMode="Password" OnTextChanged="txt_contraseña_TextChanged" type="password" AutoPostBack="True">
+                <ClientEvents OnValueChanged="PreventPostback" />
             </telerik:RadTextBox>
             <%-- Contraseña campo obligatorio --%>
             <asp:RequiredFieldValidator ID="PickerRequiredFieldValidator" runat="server" Display="Dynamic"
-                ControlToValidate="txt_contraseña" ErrorMessage="Ingrese un correo valido" />
+                ControlToValidate="txt_contraseña" ErrorMessage="Ingrese una contraseña valida" />
         </div>
         <div id="mensaje_error">
             <telerik:RadLabel ID="lbl_error" runat="server"></telerik:RadLabel>
@@ -44,4 +45,12 @@
             <telerik:RadButton ID="btn_login" runat="server" Text="Ingresar" OnClick="btn_login_Click" />
         </div>
     </div>
+
+    <script type="text/javascript">
+        function PreventPostback(sender, eventArgs) {
+            var texto = eventArgs.get_newValue();
+            if (texto.length > 7)
+                eventArgs.set_cancel(true);
+        }
+    </script>
 </asp:Content>

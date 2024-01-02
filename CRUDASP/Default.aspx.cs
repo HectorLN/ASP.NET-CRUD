@@ -23,7 +23,7 @@ namespace CRUDASP
             string connect = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
 
             SqlConnection sqlConnection = new SqlConnection(connect);
-            SqlCommand cmd = new SqlCommand("ValidateUser", sqlConnection)
+            SqlCommand cmd = new SqlCommand("sp_validate_user", sqlConnection)
             {
                 CommandType = CommandType.StoredProcedure
             };
@@ -50,47 +50,18 @@ namespace CRUDASP
             cmd.Connection.Close();
         }
 
-        //Validacion de contraseña - min 8 carácteres (NO FUNCIONA)
         protected void txt_contraseña_TextChanged(object sender, EventArgs e)
         {
-            if (txt_contraseña.Text.Length >= 8)
+            int tam = txt_contraseña.Text.Length;
+
+            if (tam >= 8)
             {
-                btn_login.Enabled = true;
+                lbl_error.Text = txt_contraseña.Text;
+            }
+            else
+            {
+                lbl_error.Text = "Contraseña lleva al menos 8 caracteres";
             }
         }
-
-        //protected void txt_correo_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (!IsValidEmail(txt_correo.Text))
-        //    {
-        //        lbl_error.Text = "El usuario debe ser un correo electrónico válido.";
-        //        return;
-        //    }
-        //}
-
-        //protected void txt_contraseña_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (!IsValidPassword(txt_contraseña.Text))
-        //    {
-        //        lbl_error.Text = "La contraseña debe tener al menos 8 caracteres.";
-        //        return;
-        //    }
-        //}
-
-        //private bool IsValidPassword(string password)
-        //{
-        //    // Validar que la contraseña tenga al menos 8 caracteres
-        //    return password.Length >= 8;
-        //}
-
-        //private bool IsValidEmail(string email)
-        //{
-        //    //Proveedores permitidos
-        //    string[] allowedProviders = { "gmail.com", "yahoo.com", "hotmail.com", "tress.com.mx", "icloud.com" };
-
-        //    //Validacion de proveedores
-        //    string EmailProvider = $@"^[A-Za-z0-9._%+-]+@({string.Join("|", allowedProviders)})$";
-        //    return System.Text.RegularExpressions.Regex.IsMatch(email, EmailProvider);
-        //}
     }
 }
