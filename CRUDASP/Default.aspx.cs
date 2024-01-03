@@ -14,7 +14,7 @@ namespace CRUDASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //btn_login.Enabled = false;
+            btn_login.Enabled = false;
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
@@ -43,8 +43,7 @@ namespace CRUDASP
             }
             else
             {
-                lbl_error.Text = "Error de usuario o contraseña";
-                Console.WriteLine("Usuario fallo");
+                lbl_error.Text = "Usuario o contraseña incorrectos";
             }
 
             cmd.Connection.Close();
@@ -60,7 +59,7 @@ namespace CRUDASP
             }
             else
             {
-                lbl_error.Text = "Contraseña lleva al menos 8 caracteres";
+                lbl_error.Text = "Igrese credenciales validas";
             }
         }
     }
