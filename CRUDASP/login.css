@@ -10,7 +10,7 @@
 .Login {
     float: right;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     width: 300px;
     height: 450px;
     background-color: #f8fdff;
@@ -18,7 +18,7 @@
     margin-top: 10vh;
     margin-right: 10vh;
     box-shadow: 0px 25px 25px 0px rgba(0,0,0,0.25);
-    justify-content:space-evenly
+    justify-content: space-evenly
 }
 
 .logo {
@@ -33,20 +33,19 @@
     align-items: center;
 }
 
-#ctl00_MainContent_lbl_bienvenida{
+#ctl00_MainContent_lbl_bienvenida {
     font-size: 4vh;
     display: flex;
     justify-content: center;
-    margin-top:  2vh;
+    margin-top: 2vh;
 }
 
-.correo{
+.correo {
     display: flex;
     flex-direction: column;
     margin-left: 4vh;
-    justify-content:flex-start;
+    justify-content: flex-start;
     font-size: 20px;
-
 }
 
 .RadInput_Default {
