@@ -14,5 +14,11 @@ main {
 
         main > article > section {
             height: 100%;
-            border: 1px solid purple;
+            border: 1px solid black;
         }
+
+.barra-lateral {
+    background-color: #f6f6f6;
+    border-radius: 6px;
+    color: aqua:
+}
