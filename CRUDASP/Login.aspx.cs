@@ -14,7 +14,6 @@ namespace CRUDASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btn_login.Enabled = false;
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace CRUDASP
             }
             else
             {
-                lbl_error.Text = "Igrese credenciales validas";
+                lbl_error.Text = "Ingrese credenciales validas";
             }
         }
     }

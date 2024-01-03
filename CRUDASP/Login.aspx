@@ -13,11 +13,11 @@
             </telerik:RadLabel>
             <%-- Seccion del correo --%>
             <div class="correo">
-                    
-                    <telerik:RadLabel class="lbl_correo" ID="lbl_correo" runat="server" AssociatedControlID="lbl_correo">
+
+                <telerik:RadLabel class="lbl_correo" ID="lbl_correo" runat="server" AssociatedControlID="lbl_correo">
                     Correo:
                 </telerik:RadLabel>
-                
+
                 <%-- Textbox del correo --%>
                 <telerik:RadTextBox class="txt_correo" ID="txt_correo" runat="server" Mask="Regex" EmptyMessage="Ingrese correo"></telerik:RadTextBox>
                 <%-- Validacion de correo --%>
