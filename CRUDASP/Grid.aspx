@@ -114,9 +114,11 @@
                 <img src="\Images\3960.jpg" />
             </section>
             <section class="barra-superior">
-                <b><p id="NombreEmpleadoSuperior" style="margin-bottom:5vmin">Usuario</p></b>
-                
-                <div style="display:flex; justify-content:space-between; width:70%">
+                <b>
+                    <p id="NombreEmpleadoSuperior" style="margin-bottom: 5vmin">Usuario</p>
+                </b>
+
+                <div style="display: flex; justify-content: space-between; width: 70%">
                     <p id="PuestoEmpleadoSuperior" style="opacity: 0.7;">Puesto</p>
                     <p id="FechaEmpleadoSuperior" style="opacity: 0.7">Empleado desde </p>
                 </div>
@@ -153,19 +155,19 @@
                                 <ClientEvents OnRowClick="rowClick" />
                             </ClientSettings>
 
-                            <MasterTableView AutoGenerateColumns="False" DataKeyNames="ID, NOMBRE, PUESTO, FechaIngreso" DataSourceID="SqlDataSource1" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top">
+                            <MasterTableView AutoGenerateColumns="False" EditMode="PopUp" DataKeyNames="id_empleado" DataSourceID="SqlDataSource1" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top">
                                 <CommandItemSettings AddNewRecordText="Ingresar empleado" ShowRefreshButton="False" />
                                 <RowIndicatorColumn ShowNoSortIcon="False"></RowIndicatorColumn>
 
                                 <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
                                 <Columns>
-                                    <telerik:GridBoundColumn DataField="ID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ID" ShowNoSortIcon="False" SortExpression="ID" UniqueName="ID">
+                                    <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado" ReadOnly="True">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="NOMBRE" FilterControlAltText="Filter NOMBRE column" HeaderText="NOMBRE" ShowNoSortIcon="False" SortExpression="NOMBRE" UniqueName="NOMBRE">
+                                    <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="nombre" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="PUESTO" FilterControlAltText="Filter PUESTO column" HeaderText="PUESTO" ShowNoSortIcon="False" SortExpression="PUESTO" UniqueName="PUESTO">
+                                    <telerik:GridBoundColumn DataField="puesto" FilterControlAltText="Filter puesto column" HeaderText="puesto" ShowNoSortIcon="False" SortExpression="puesto" UniqueName="puesto">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="FechaIngreso" DataType="System.DateTime" FilterControlAltText="Filter FechaIngreso column" HeaderText="FechaIngreso" ShowNoSortIcon="False" SortExpression="FechaIngreso" UniqueName="FechaIngreso">
+                                    <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="fecha_ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
                                     </telerik:GridBoundColumn>
                                     <telerik:GridButtonColumn ConfirmText="" ConfirmDialogType="RadWindow"
                                         ConfirmTitle="Eliminar" ButtonType="FontIconButton" CommandName="Delete" ConfirmTextFields="NOMBRE" ConfirmTextFormatString="Desea eliminar a {0}?" FilterControlAltText="Filter borrar column" UniqueName="borrar" />
@@ -189,7 +191,7 @@
 
                             <HeaderContextMenu RenderMode="Lightweight"></HeaderContextMenu>
                         </telerik:RadGrid>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=GTI-739;Initial Catalog=PRUEBA;Persist Security Info=True;User ID=sa;Password=Tr3$$GT1.20" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [EMPLEADOS]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRUDG3IConnectionString %>" SelectCommand="SELECT e.id_empleado, e.nombre, p.puesto, e.fecha_ingreso FROM tbl_empleado e INNER JOIN tbl_puesto p  ON e.id_puesto = p.id_puesto"></asp:SqlDataSource>
                         <div class="p-2">
                         </div>
 
