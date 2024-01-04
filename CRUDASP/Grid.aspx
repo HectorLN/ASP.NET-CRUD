@@ -108,7 +108,6 @@
         </script>
     </telerik:RadCodeBlock>
     <main>
-        <hr />
         <article>
             <section class="barra-lateral">
                 <img src="\Images\3960.jpg" />
@@ -159,6 +158,7 @@
                                 <Selecting AllowRowSelect="True" />
                                 <ClientEvents OnRowDblClick="rowDblClick" />
                                 <ClientEvents OnRowClick="rowClick" />
+                                <Scrolling AllowScroll="True" UseStaticHeaders="True" />
                             </ClientSettings>
 
                             <MasterTableView AutoGenerateColumns="False" EditMode="PopUp" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top" DataSourceID="SqlDataSource1" DataKeyNames="id_empleado, nombre, puesto, fecha_ingreso">
