@@ -24,6 +24,33 @@ namespace CRUDASP
         protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
 
         /// <summary>
+        /// NombreLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadLabel NombreLabel;
+
+        /// <summary>
+        /// PuestoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadLabel PuestoLabel;
+
+        /// <summary>
+        /// FechaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadLabel FechaLabel;
+
+        /// <summary>
         /// RadButton1 control.
         /// </summary>
         /// <remarks>

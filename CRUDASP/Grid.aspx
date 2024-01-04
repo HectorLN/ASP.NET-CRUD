@@ -100,9 +100,9 @@
                     var data = grid.get_dataItems();
                     var rows = data[eventArgs.get_itemIndexHierarchical()];
                     console.log(rows._element.cells[1].innerHTML);
-                    $('#NombreEmpleadoSuperior')[0].innerHTML = rows._element.cells[1].innerHTML;
-                    $('#PuestoEmpleadoSuperior')[0].innerHTML = rows._element.cells[2].innerHTML;
-                    $('#FechaEmpleadoSuperior')[0].innerHTML = 'Empleado desde ' + rows._element.cells[3].innerHTML;
+                    //$('#NombreEmpleadoSuperior')[0].innerHTML = rows._element.cells[1].innerHTML;
+                    //$('#PuestoEmpleadoSuperior')[0].innerHTML = rows._element.cells[2].innerHTML;
+                    //$('#FechaEmpleadoSuperior')[0].innerHTML = 'Empleado desde ' + rows._element.cells[3].innerHTML;
                 }
             }
         </script>
@@ -114,13 +114,14 @@
                 <img src="\Images\3960.jpg" />
             </section>
             <section class="barra-superior">
-                <b>
-                    <p id="NombreEmpleadoSuperior" style="margin-bottom: 5vmin">Usuario</p>
-                </b>
+                
+                    <div style="margin-bottom: 5vmin">
+                        <b><telerik:RadLabel ID="NombreLabel" Text="Usuario" runat="server"></telerik:RadLabel></b>
+                    </div>
 
                 <div style="display: flex; justify-content: space-between; width: 70%">
-                    <p id="PuestoEmpleadoSuperior" style="opacity: 0.7;">Puesto</p>
-                    <p id="FechaEmpleadoSuperior" style="opacity: 0.7">Empleado desde </p>
+                    <telerik:RadLabel ID="PuestoLabel" Text="Puesto" runat="server"></telerik:RadLabel>
+                    <telerik:RadLabel ID="FechaLabel" Text="Empleado desde " runat="server"></telerik:RadLabel>
                 </div>
 
             </section>
@@ -136,6 +137,9 @@
                         <telerik:AjaxSetting AjaxControlID="RadGrid1">
                             <UpdatedControls>
                                 <telerik:AjaxUpdatedControl ControlID="RadGrid1"></telerik:AjaxUpdatedControl>
+                                <telerik:AjaxUpdatedControl ControlID="NombreLabel"></telerik:AjaxUpdatedControl>
+                                <telerik:AjaxUpdatedControl ControlID="PuestoLabel"></telerik:AjaxUpdatedControl>
+                                <telerik:AjaxUpdatedControl ControlID="FechaLabel"></telerik:AjaxUpdatedControl>
                             </UpdatedControls>
                         </telerik:AjaxSetting>
                     </AjaxSettings>
@@ -145,23 +149,26 @@
                 <div style="height: -webkit-fill-available; display: flex; flex-direction: column">
                     <br />
                     <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
-                        <telerik:RadGrid RenderMode="Lightweight" AllowAutomaticInserts="True" ID="RadGrid1" runat="server" AutoGenerateEditColumn="True" Style="margin-bottom: 0px" ShowHeader="False" DataSourceID="SqlDataSource1">
+                        <telerik:RadGrid RenderMode="Lightweight" AllowAutomaticInserts="True" ID="RadGrid1" runat="server"
+                            AutoGenerateEditColumn="True" Style="margin-bottom: 0px" ShowHeader="False" CellSpacing="-1"
+                            DataSourceID="SqlDataSource1" GridLines="Both" OnSelectedIndexChanged="RadGrid1_SelectedIndexChanged"
+                            OnItemCommand="RadGrid1_ItemCommand">
                             <GroupingSettings CollapseAllTooltip="Collapse all groups"></GroupingSettings>
 
-                            <ClientSettings>
-                                <Animation AllowColumnReorderAnimation="True" AllowColumnRevertAnimation="True" />
+                            <ClientSettings AllowKeyboardNavigation="true" EnablePostBackOnRowClick="true">
                                 <Selecting AllowRowSelect="True" />
                                 <ClientEvents OnRowDblClick="rowDblClick" />
                                 <ClientEvents OnRowClick="rowClick" />
                             </ClientSettings>
 
-                            <MasterTableView AutoGenerateColumns="False" EditMode="PopUp" DataKeyNames="id_empleado" DataSourceID="SqlDataSource1" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top">
+                            <MasterTableView AutoGenerateColumns="False" EditMode="PopUp" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top" DataSourceID="SqlDataSource1" DataKeyNames="id_empleado, nombre, puesto, fecha_ingreso">
                                 <CommandItemSettings AddNewRecordText="Ingresar empleado" ShowRefreshButton="False" />
                                 <RowIndicatorColumn ShowNoSortIcon="False"></RowIndicatorColumn>
 
                                 <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
+
                                 <Columns>
-                                    <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado" ReadOnly="True">
+                                    <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
                                     </telerik:GridBoundColumn>
                                     <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="nombre" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
                                     </telerik:GridBoundColumn>
@@ -169,8 +176,6 @@
                                     </telerik:GridBoundColumn>
                                     <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="fecha_ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridButtonColumn ConfirmText="" ConfirmDialogType="RadWindow"
-                                        ConfirmTitle="Eliminar" ButtonType="FontIconButton" CommandName="Delete" ConfirmTextFields="NOMBRE" ConfirmTextFormatString="Desea eliminar a {0}?" FilterControlAltText="Filter borrar column" UniqueName="borrar" />
                                 </Columns>
 
                                 <EditFormSettings>
