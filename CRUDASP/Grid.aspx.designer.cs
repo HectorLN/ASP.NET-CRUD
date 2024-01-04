@@ -51,6 +51,15 @@ namespace CRUDASP
         protected global::Telerik.Web.UI.RadLabel FechaLabel;
 
         /// <summary>
+        /// lbl_bienvenida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_bienvenida;
+
+        /// <summary>
         /// RadButton1 control.
         /// </summary>
         /// <remarks>

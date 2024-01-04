@@ -126,7 +126,7 @@
 
             </section>
             <section class="barra-inferior">
-                <p style="opacity: 0.7">Bienvenid@, Usuario</p>
+                <asp:Label ID="lbl_bienvenida" runat="server" Text="" CssClass="p, opacity: 0.7" ></asp:Label>
                 <telerik:RadButton ID="RadButton1" ButtonType="SkinnedButton" runat="server" Text="Empleados"></telerik:RadButton>
                 <telerik:RadButton ID="RadButton2" ButtonType="SkinnedButton" runat="server" Text="Puestos"></telerik:RadButton>
             </section>

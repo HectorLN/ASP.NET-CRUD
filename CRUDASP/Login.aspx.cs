@@ -19,7 +19,7 @@ namespace CRUDASP
         protected void btn_login_Click(object sender, EventArgs e)
         {
             //Conexion base de datos
-            string connect = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string connect = ConfigurationManager.ConnectionStrings["CRUDG3IConnectionString"].ConnectionString;
 
             SqlConnection sqlConnection = new SqlConnection(connect);
             SqlCommand cmd = new SqlCommand("sp_validate_user", sqlConnection)
@@ -38,7 +38,7 @@ namespace CRUDASP
             {
                 //Redireccion de pagina con usuario validado
                 Session["LoggedIn"] = dr["nombre"].ToString(); //Columna de nombre dentro de tabla para label de bienvendia
-                Response.Redirect("About.aspx");
+                Response.Redirect("Grid.aspx");
             }
             else
             {
