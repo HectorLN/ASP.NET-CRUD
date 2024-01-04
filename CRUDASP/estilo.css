@@ -1,0 +1,24 @@
+﻿body {
+}
+
+main {
+    flex-grow: 1;
+}
+
+    main > article {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 3fr;
+    }
+
+        main > article > section {
+            height: 100%;
+            border: 1px solid black;
+        }
+
+.barra-lateral {
+    background-color: #f6f6f6;
+    border-radius: 6px;
+    color: aqua:
+}
