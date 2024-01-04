@@ -11,17 +11,8 @@ namespace CRUDASP
 {
 
 
-    public partial class Grid
+    public partial class _Default
     {
-
-        /// <summary>
-        /// RadCodeBlock1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
 
         /// <summary>
         /// lbl_bienvenida control.
@@ -30,96 +21,87 @@ namespace CRUDASP
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_bienvenida;
+        protected global::Telerik.Web.UI.RadLabel lbl_bienvenida;
 
         /// <summary>
-        /// RadButton1 control.
+        /// lbl_correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadButton RadButton1;
+        protected global::Telerik.Web.UI.RadLabel lbl_correo;
 
         /// <summary>
-        /// RadButton2 control.
+        /// txt_correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadButton RadButton2;
+        protected global::Telerik.Web.UI.RadTextBox txt_correo;
 
         /// <summary>
-        /// RadFormDecorator1 control.
+        /// emailValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator emailValidator;
 
         /// <summary>
-        /// RadAjaxManager1 control.
+        /// Requiredfieldvalidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator1;
 
         /// <summary>
-        /// RadSplitButton1 control.
+        /// lbl_contraseña control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadSplitButton RadSplitButton1;
+        protected global::Telerik.Web.UI.RadLabel lbl_contraseña;
 
         /// <summary>
-        /// RadGrid1 control.
+        /// txt_contraseña control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid1;
+        protected global::Telerik.Web.UI.RadTextBox txt_contraseña;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// PickerRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PickerRequiredFieldValidator;
 
         /// <summary>
-        /// RadInputManager1 control.
+        /// lbl_error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadInputManager RadInputManager1;
+        protected global::Telerik.Web.UI.RadLabel lbl_error;
 
         /// <summary>
-        /// RadWindowManager1 control.
+        /// btn_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadWindowManager RadWindowManager1;
-
-        /// <summary>
-        /// Eliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadWindow Eliminar;
+        protected global::Telerik.Web.UI.RadButton btn_login;
     }
 }

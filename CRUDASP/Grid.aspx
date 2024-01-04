@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         body {
@@ -122,10 +121,9 @@
                     <p id="PuestoEmpleadoSuperior" style="opacity: 0.7;">Puesto</p>
                     <p id="FechaEmpleadoSuperior" style="opacity: 0.7">Empleado desde </p>
                 </div>
-
             </section>
             <section class="barra-inferior">
-                <p style="opacity: 0.7">Bienvenid@, Usuario</p>
+                <asp:Label ID="lbl_bienvenida" runat="server" Text="" CssClass="h3"></asp:Label>
                 <telerik:RadButton ID="RadButton1" ButtonType="SkinnedButton" runat="server" Text="Empleados"></telerik:RadButton>
                 <telerik:RadButton ID="RadButton2" ButtonType="SkinnedButton" runat="server" Text="Puestos"></telerik:RadButton>
             </section>
@@ -194,10 +192,8 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRUDG3IConnectionString %>" SelectCommand="SELECT e.id_empleado, e.nombre, p.puesto, e.fecha_ingreso FROM tbl_empleado e INNER JOIN tbl_puesto p  ON e.id_puesto = p.id_puesto"></asp:SqlDataSource>
                         <div class="p-2">
                         </div>
-
                     </div>
                 </div>
-
 
                 <telerik:RadInputManager RenderMode="Lightweight" runat="server" ID="RadInputManager1" Enabled="true">
                     <telerik:TextBoxSetting BehaviorID="TextBoxSetting1">
@@ -213,9 +209,5 @@
                 </telerik:RadWindowManager>
             </section>
         </article>
-
     </main>
-
-
-
 </asp:Content>
