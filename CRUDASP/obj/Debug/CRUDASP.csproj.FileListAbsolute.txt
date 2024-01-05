@@ -159,3 +159,8 @@ C:\Users\Jtriana\source\repos\ASP.NET-CRUD\CRUDASP\obj\Debug\CRUDASP.csproj.Core
 C:\Users\Jtriana\source\repos\ASP.NET-CRUD\CRUDASP\obj\Debug\CRUDASP.csproj.CopyComplete
 C:\Users\Jtriana\source\repos\ASP.NET-CRUD\CRUDASP\obj\Debug\CRUDASP.dll
 C:\Users\Jtriana\source\repos\ASP.NET-CRUD\CRUDASP\obj\Debug\CRUDASP.pdb
+C:\Users\Frodriguez\Source\Repos\HectorLN\ASP.NET-CRUD\CRUDASP\bin\Telerik.Web.Design.dll
+C:\Users\Frodriguez\Source\Repos\HectorLN\ASP.NET-CRUD\CRUDASP\bin\Telerik.Web.Device.Detection.dll
+C:\Users\Frodriguez\Source\Repos\HectorLN\ASP.NET-CRUD\CRUDASP\bin\Telerik.Web.UI.dll
+C:\Users\Frodriguez\Source\Repos\HectorLN\ASP.NET-CRUD\CRUDASP\bin\Telerik.Web.UI.Skins.dll
+C:\Users\Frodriguez\Source\Repos\HectorLN\ASP.NET-CRUD\CRUDASP\bin\Microsoft.AnalysisServices.AdomdClient.dll
