@@ -20,9 +20,9 @@
             .wrapper > article {
                 display: grid;
                 height: -webkit-fit-content;
-                width: -webkit-fit-content;
-                grid-template-columns: 1fr 3fr;
-                grid-template-rows: 1fr 3fr;
+                width: -webkit-fill-available;
+                grid-template-columns: 1fr 5fr;
+                grid-template-rows: 1fr 5fr;
             }
 
                 .wrapper > article > section {
@@ -162,7 +162,8 @@
                     <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel2" Transparency="50" runat="server" Skin="MetroTouch">
                     </telerik:RadAjaxLoadingPanel>
                     <br />
-                    <telerik:RadSplitButton ID="RadSplitButton1" runat="server" Text="RadSplitButton"></telerik:RadSplitButton>
+                    <telerik:RadSplitButton ID="RadSplitButton1" runat="server" Text="RadSplitButton">
+                    </telerik:RadSplitButton>
                     <div style="height: -webkit-fill-available; display: flex; flex-direction: column">
                         <br />
                         <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
@@ -175,6 +176,7 @@
 
                                 <ClientSettings AllowKeyboardNavigation="true" EnablePostBackOnRowClick="true">
                                     <Selecting AllowRowSelect="True" />
+                                    <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="true" FrozenColumnsCount="2"></Scrolling>
                                     <ClientEvents OnRowDblClick="rowDblClick" />
                                     <ClientEvents OnRowClick="rowClick" />
                                 </ClientSettings>
@@ -229,8 +231,7 @@
 
                                 <ClientSettings AllowKeyboardNavigation="true" EnablePostBackOnRowClick="true">
                                     <Selecting AllowRowSelect="True" />
-                                    <ClientEvents OnRowDblClick="rowDblClick" />
-                                    <ClientEvents OnRowClick="rowClick" />
+                                    <Scrolling AllowScroll="True" UseStaticHeaders="True" SaveScrollPosition="true" FrozenColumnsCount="2"></Scrolling>
                                 </ClientSettings>
 
                                 <MasterTableView AutoGenerateColumns="False" EditMode="PopUp" ShowHeader="True" AllowSorting="True" EnableHeaderContextMenu="True" CommandItemDisplay="Top" DataSourceID="SqlDataSource2" DataKeyNames="id_nomina">
