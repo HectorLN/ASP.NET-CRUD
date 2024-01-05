@@ -2,7 +2,6 @@
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         body {
@@ -132,7 +131,6 @@
                         <telerik:RadLabel ID="PuestoLabel" Text="Puesto" runat="server"></telerik:RadLabel>
                         <telerik:RadLabel ID="FechaLabel" Text="Empleado desde " runat="server"></telerik:RadLabel>
                     </div>
-
                 </section>
                 <section class="barra-inferior">
                     <asp:Label ID="lbl_bienvenida" runat="server" Text=""></asp:Label>
@@ -221,7 +219,6 @@
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRUDG3IConnectionString %>" SelectCommand="SELECT e.id_empleado, e.nombre, p.puesto, e.fecha_ingreso FROM tbl_empleado e INNER JOIN tbl_puesto p  ON e.id_puesto = p.id_puesto"></asp:SqlDataSource>
                             <div class="p-2">
                             </div>
-
                         </div>
                         <br />
                         <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
@@ -277,10 +274,8 @@
                             </asp:SqlDataSource>
                             <div class="p-2">
                             </div>
-
                         </div>
                     </div>
-
 
                     <telerik:RadInputManager RenderMode="Lightweight" runat="server" ID="RadInputManager1" Enabled="true">
                         <telerik:TextBoxSetting BehaviorID="TextBoxSetting1">
@@ -297,9 +292,5 @@
                 </section>
             </article>
         </div>
-
     </main>
-
-
-
 </asp:Content>

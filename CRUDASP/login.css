@@ -11,8 +11,8 @@
     float: right;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 450px;
+    width: 400px;
+    height: 600px;
     background-color: #f8fdff;
     border-radius: 30px;
     margin-top: 10vh;
@@ -34,7 +34,7 @@
 }
 
 #ctl00_MainContent_lbl_bienvenida {
-    font-size: 4vh;
+    font-size: 38px;
     display: flex;
     justify-content: center;
     margin-top: 2vh;
@@ -46,6 +46,20 @@
     margin-left: 4vh;
     justify-content: flex-start;
     font-size: 20px;
+}
+
+html .RadButton_Windows7.rbSkinnedButton {
+    color: #1e395b;
+}
+
+#ctl00_MainContent_lbl_correo {
+    font-size:25px;
+    color: #004aad;
+}
+
+#ctl00_MainContent_lbl_contraseña {
+    font-size:25px;
+    color: #004aad;
 }
 
 .RadInput_Default {
@@ -60,4 +74,41 @@
     margin-left: 4vh;
     justify-content: flex-start;
     font-size: 20px;
+}
+
+#boton_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html .RadButton_Default.rbLinkButton {
+    border-radius: 30px;
+    color: white;
+    width: 223px;
+    height: 60px;
+    background-image: linear-gradient(#004aad,#004aad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+    html .RadButton_Default.rbLinkButton:hover {
+        background-image: linear-gradient(white,white);
+        border: solid;
+        border-color: #004aad;
+        color: #004aad;
+    }
+
+html body .RadInput_Default .riTextBox{
+   font-size: 18px;
+   width:auto;
+   
+}
+
+#ctl00_MainContent_lbl_error {
+    font-size: 20px;
+    color:red;
 }

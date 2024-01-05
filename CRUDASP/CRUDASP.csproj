@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -124,6 +125,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Grid.aspx" />
+    <Content Include="Images\3960.jpg" />
     <Content Include="Images\logoGTIBlanco 1.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
