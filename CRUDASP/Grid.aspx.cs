@@ -41,17 +41,17 @@ namespace CRUDASP
 
         protected void RadGrid1_ItemCommand(object sender, GridCommandEventArgs e)
         {
-            //if (e.CommandName == "RowClick")
-            //{
-            //    GridDataItem item = (GridDataItem)e.Item;
-            //    string nombre = item["Nombre"].Text;
-            //    string puesto = item["puesto"].Text;
-            //    string fecha = item["fecha_ingreso"].Text;
+            if (e.CommandName == "RowClick")
+            {
+                GridDataItem item = (GridDataItem)e.Item;
+                string nombre = item["Nombre"].Text;
+                string puesto = item["puesto"].Text;
+                string fecha = item["fecha_ingreso"].Text;
 
-            //    NombreLabel.Text = nombre;
-            //    PuestoLabel.Text = puesto;
-            //    FechaLabel.Text = "Empleado desde " + fecha;
-            //}
+                NombreLabel.Text = nombre;
+                PuestoLabel.Text = puesto;
+                FechaLabel.Text = "Empleado desde " + fecha;
+            }
             //else if (e.CommandName == "Delete")
             //{
             //    // execute some logic
@@ -107,16 +107,16 @@ namespace CRUDASP
             editableItem.ExtractValues(values);
 
 
-            SqlCommand cmd2 = new SqlCommand("sp_comparacion_puesto", con);
+            //SqlCommand cmd2 = new SqlCommand("sp_comparacion_puesto", con);
             con.Open();
-            cmd2.CommandType = CommandType.StoredProcedure;
-            cmd2.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = values["puesto"];
-            //SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int);
-            //retval.Direction = System.Data.ParameterDirection.ReturnValue;
-            //cmd2.Parameters.Add(retval);
-            //var outputParamter = cmd2.Parameters.Add("@Return", SqlDbType.Int);
-            //outputParamter.Direction = ParameterDirection.ReturnValue;
-            cmd2.ExecuteNonQuery();
+            //cmd2.CommandType = CommandType.StoredProcedure;
+            //cmd2.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = values["puesto"];
+            ////SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int);
+            ////retval.Direction = System.Data.ParameterDirection.ReturnValue;
+            ////cmd2.Parameters.Add(retval);
+            ////var outputParamter = cmd2.Parameters.Add("@Return", SqlDbType.Int);
+            ////outputParamter.Direction = ParameterDirection.ReturnValue;
+            //cmd2.ExecuteNonQuery();
             //var resultado = (int)cmd2.Parameters["@RETURN_VALUE"].Value;
             var resultado = 2;
 
