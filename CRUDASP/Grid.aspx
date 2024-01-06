@@ -11,7 +11,7 @@
         main {
             left: 0;
             top: 0;
-        }
+        } 
 
         .wrapper {
             height: 90vh;

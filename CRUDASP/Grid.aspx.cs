@@ -19,7 +19,7 @@ namespace CRUDASP
         //Agregar cadena de conexion
         readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CRUDG3IConnectionString"].ConnectionString);
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e) 
         {
             if (Session["LoggedIn"] != null)
             {
