@@ -47,25 +47,12 @@ namespace CRUDASP
                 string nombre = item["Nombre"].Text;
                 string puesto = item["puesto"].Text;
                 string fecha = item["fecha_ingreso"].Text;
-
+               
                 NombreLabel.Text = nombre;
                 PuestoLabel.Text = puesto;
                 FechaLabel.Text = "Empleado desde " + fecha;
             }
-            //else if (e.CommandName == "Delete")
-            //{
-            //    // execute some logic
-            //    GridDataItem item = (GridDataItem)e.Item;
-            //    string id_empleado = item["id_empleado"].Text;
-
-            //    SqlCommand cmd = new SqlCommand("sp_delete_empleado", con);
-            //    con.Open();
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = int.Parse(id_empleado);
-            //    cmd.ExecuteNonQuery();
-            //    con.Close();
-
-            //}
+     
 
             if (e.CommandName == "MyCustomCommand1")
             {
@@ -81,10 +68,7 @@ namespace CRUDASP
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            else if (e.CommandName == "MyCustomCommand2")
-            {
-                // execute some logic
-            }
+           
         }
 
         protected void RadGrid1_DeleteCommand(object sender, GridCommandEventArgs e)
@@ -118,14 +102,14 @@ namespace CRUDASP
             ////outputParamter.Direction = ParameterDirection.ReturnValue;
             //cmd2.ExecuteNonQuery();
             //var resultado = (int)cmd2.Parameters["@RETURN_VALUE"].Value;
-            var resultado = 2;
+           
 
             //
 
             SqlCommand cmd = new SqlCommand("sp_create_empleado", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = values["nombre"];
-            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = resultado;
+            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = values["puesto"];
             cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
             cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = values["fecha_ingreso"];
 
@@ -146,7 +130,7 @@ namespace CRUDASP
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = id_empleado;
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = values["nombre"];
-            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = 2;
+            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = values["puesto"];
             cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
             cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = values["fecha_ingreso"];
 

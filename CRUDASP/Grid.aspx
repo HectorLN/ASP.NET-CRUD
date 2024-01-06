@@ -130,8 +130,10 @@
 
                     <div style="display: flex; justify-content: space-between; width: 70%">
                         <telerik:RadLabel ID="PuestoLabel" Text="Puesto" runat="server"></telerik:RadLabel>
-                        <telerik:RadLabel ID="FechaLabel" Text="Empleado desde " runat="server"></telerik:RadLabel>
-                    </div>
+                        
+                        <telerik:RadLabel ID="FechaLabel" Text="Empleado desde "  runat="server"></telerik:RadLabel>
+                 
+                        </div>
                 </section>
                 <section class="barra-inferior">
                     <asp:Label ID="lbl_bienvenida" runat="server" Text=""></asp:Label>
