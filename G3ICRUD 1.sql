@@ -136,7 +136,7 @@ update tbl_empleado set  nombre=@Nombre, foto=@Foto, id_puesto=@Id_puesto, fecha
 where id_empleado=@Id_empleado
 end
 
---exec sp_update 2, 'favio rodriguez','hola',1,'2023-09-05'  ejemplo para actualizar
+--exec sp_update 2, 'favio rodriguez','oal',1,'2023-09-05'  ejemplo para actualizar
 
 select * from tbl_empleado
 
