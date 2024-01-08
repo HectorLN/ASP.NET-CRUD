@@ -19,7 +19,7 @@ namespace CRUDASP
         //Agregar cadena de conexion
         readonly SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CRUDG3IConnectionString"].ConnectionString);
 
-        protected void Page_Load(object sender, EventArgs e) 
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["LoggedIn"] != null)
             {
@@ -47,28 +47,29 @@ namespace CRUDASP
                 string nombre = item["Nombre"].Text;
                 string puesto = item["puesto"].Text;
                 string fecha = item["fecha_ingreso"].Text;
-               
+                string id = item["id_empleado"].Text;
+
                 NombreLabel.Text = nombre;
                 PuestoLabel.Text = puesto;
                 FechaLabel.Text = "Empleado desde " + fecha;
-            }
-     
 
-            if (e.CommandName == "MyCustomCommand1")
-            {
-                // execute some logic
-
-                GridDataItem item = (GridDataItem)e.Item;
-                string id_empleado = item["id_empleado"].Text;
-
-                SqlCommand cmd = new SqlCommand("sp_delete_empleado", con);
+                string queryString =
+                "SELECT foto FROM tbl_empleado WHERE id_empleado = " + id;
+                SqlCommand command = new SqlCommand(
+                    queryString, con);
                 con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = int.Parse(id_empleado);
-                cmd.ExecuteNonQuery();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var foto_src = "" + reader[0];
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), Guid.NewGuid().ToString(),
+                        "setFoto('" + foto_src + "');", true);
+                    }
+                }
                 con.Close();
             }
-           
+
         }
 
         protected void RadGrid1_DeleteCommand(object sender, GridCommandEventArgs e)
@@ -102,7 +103,7 @@ namespace CRUDASP
             ////outputParamter.Direction = ParameterDirection.ReturnValue;
             //cmd2.ExecuteNonQuery();
             //var resultado = (int)cmd2.Parameters["@RETURN_VALUE"].Value;
-           
+
 
             //
 
@@ -136,6 +137,12 @@ namespace CRUDASP
 
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        protected void RadGrid1_PreRender(object sender, EventArgs e)
+        {
+            //GridItem firstItem = RadGrid1.Items[0];
+            //firstItem.FireCommandEvent("RowClick","");
         }
     }
 }
