@@ -132,7 +132,6 @@ namespace CRUDASP
             cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = id_empleado;
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = values["nombre"];
             cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = values["puesto"];
-            cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
             cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = values["fecha_ingreso"];
 
             cmd.ExecuteNonQuery();
