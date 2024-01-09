@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRUDASP
-{
-
-
-    public partial class Grid
-    {
-
+namespace CRUDASP {
+    
+    
+    public partial class Grid {
+        
         /// <summary>
         /// RadCodeBlock1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
-
+        
         /// <summary>
         /// NombreLabel control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadLabel NombreLabel;
-
+        
         /// <summary>
         /// PuestoLabel control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadLabel PuestoLabel;
-
+        
         /// <summary>
         /// FechaLabel control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadLabel FechaLabel;
-
+        
         /// <summary>
         /// lbl_bienvenida control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_bienvenida;
-
+        
         /// <summary>
         /// RadButton1 control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadButton RadButton1;
-
+        
         /// <summary>
         /// RadButton2 control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadButton RadButton2;
-
+        
         /// <summary>
         /// RadFormDecorator1 control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
-
+        
         /// <summary>
         /// RadAjaxManager1 control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
-
+        
         /// <summary>
         /// RadAjaxLoadingPanel1 control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadAjaxLoadingPanel RadAjaxLoadingPanel1;
-
+        
         /// <summary>
         /// RadAjaxLoadingPanel2 control.
         /// </summary>
@@ -112,16 +110,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadAjaxLoadingPanel RadAjaxLoadingPanel2;
-
-        /// <summary>
-        /// RadSplitButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadSplitButton RadSplitButton1;
-
+        
         /// <summary>
         /// RadGrid1 control.
         /// </summary>
@@ -130,7 +119,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadGrid RadGrid1;
-
+        
         /// <summary>
         /// SqlDataSource1 control.
         /// </summary>
@@ -139,7 +128,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
+        
         /// <summary>
         /// RadGrid2 control.
         /// </summary>
@@ -148,7 +137,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadGrid RadGrid2;
-
+        
         /// <summary>
         /// SqlDataSource2 control.
         /// </summary>
@@ -157,7 +146,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-
+        
         /// <summary>
         /// RadInputManager1 control.
         /// </summary>
@@ -166,7 +155,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadInputManager RadInputManager1;
-
+        
         /// <summary>
         /// RadWindowManager1 control.
         /// </summary>
@@ -175,7 +164,7 @@ namespace CRUDASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadWindowManager RadWindowManager1;
-
+        
         /// <summary>
         /// Eliminar control.
         /// </summary>
