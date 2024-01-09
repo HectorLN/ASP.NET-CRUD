@@ -76,8 +76,8 @@ namespace CRUDASP
                 //Update new values
                 Hashtable newValues = new Hashtable();
 
-                newValues["nombre"] = (userControl.FindControl("TextBox7") as TextBox).Text;
-                newValues["puesto"] = (userControl.FindControl("DropEmpleado") as DropDownList).SelectedItem.Value;
+                newValues["nombre"] = (userControl.FindControl("RadTextBox1") as RadTextBox).Text;
+                newValues["puesto"] = (userControl.FindControl("RadDropDownList1") as RadDropDownList).SelectedItem.Value;
                 newValues["fecha_ingreso"] = (userControl.FindControl("BirthDatePicker") as RadDatePicker).SelectedDate.ToString();
 
                 string queryString =
@@ -105,46 +105,11 @@ namespace CRUDASP
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+                Response.Redirect("Grid.aspx");
             }
-            if (e.CommandName == "btn_editar_empleado")
+             if (e.CommandName == "btn_editar_empleado")
             {
-                // execute some logic
-                UserControl userControl = (UserControl)e.Item.FindControl(GridEditFormItem.EditFormUserControlID);
-                //Update new values
-                Hashtable newValues = new Hashtable();
-                var editableItem = ((GridEditableItem)e.Item);
-                editableItem.ExtractValues(newValues);
-
-                var id_empleado = (int)editableItem.GetDataKeyValue("id_empleado");
-                newValues["nombre"] = (userControl.FindControl("TextBox7") as TextBox).Text;
-                newValues["puesto"] = (userControl.FindControl("DropEmpleado") as DropDownList).SelectedItem.Value;
-                newValues["fecha_ingreso"] = (userControl.FindControl("BirthDatePicker") as RadDatePicker).SelectedDate.ToString();
-
-                string queryString =
-               "SELECT id_puesto FROM tbl_puesto WHERE puesto = '" + newValues["puesto"] + "'";
-                SqlCommand command = new SqlCommand(
-                    queryString, con);
-                con.Open();
-
-                var id_puesto = 0;
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        id_puesto = int.Parse("" + reader[0]);
-                    }
-                }
-                SqlCommand cmd = new SqlCommand("sp_update", con);
-                con.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = id_empleado;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = newValues["nombre"];
-                cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = id_puesto;
-                cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = newValues["fecha_ingreso"];
-
-                cmd.ExecuteNonQuery();
-                con.Close();
+                
             }
         }
 
@@ -161,58 +126,6 @@ namespace CRUDASP
             con.Close();
         }
 
-        protected void RadGrid1_InsertCommand(object sender, GridCommandEventArgs e)
-        {
-            Hashtable values = new Hashtable();
-            var editableItem = ((GridEditableItem)e.Item);
-            editableItem.ExtractValues(values);
-
-
-            //SqlCommand cmd2 = new SqlCommand("sp_comparacion_puesto", con);
-            con.Open();
-            //cmd2.CommandType = CommandType.StoredProcedure;
-            //cmd2.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = values["puesto"];
-            ////SqlParameter retval = new SqlParameter("@ReturnValue", System.Data.SqlDbType.Int);
-            ////retval.Direction = System.Data.ParameterDirection.ReturnValue;
-            ////cmd2.Parameters.Add(retval);
-            ////var outputParamter = cmd2.Parameters.Add("@Return", SqlDbType.Int);
-            ////outputParamter.Direction = ParameterDirection.ReturnValue;
-            //cmd2.ExecuteNonQuery();
-            //var resultado = (int)cmd2.Parameters["@RETURN_VALUE"].Value;
-
-
-            //
-
-            SqlCommand cmd = new SqlCommand("sp_create_empleado", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = values["nombre"];
-            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = values["puesto"];
-            cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
-            cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = values["fecha_ingreso"];
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        protected void RadGrid1_UpdateCommand(object sender, GridCommandEventArgs e)
-        {
-            Hashtable values = new Hashtable();
-            var editableItem = ((GridEditableItem)e.Item);
-            editableItem.ExtractValues(values);
-
-            var id_empleado = (int)editableItem.GetDataKeyValue("id_empleado");
-
-            SqlCommand cmd = new SqlCommand("sp_update", con);
-            con.Open();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = id_empleado;
-            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = values["nombre"];
-            cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = values["puesto"];
-            cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = values["fecha_ingreso"];
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
 
         protected void RadGrid1_PreRender(object sender, EventArgs e)
         {

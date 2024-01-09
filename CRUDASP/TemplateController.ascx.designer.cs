@@ -24,22 +24,22 @@ namespace CRUDASP
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// TextBox7 control.
+        /// RadTextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::Telerik.Web.UI.RadTextBox RadTextBox1;
 
         /// <summary>
-        /// DropEmpleado control.
+        /// RadDropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropEmpleado;
+        protected global::Telerik.Web.UI.RadDropDownList RadDropDownList1;
 
         /// <summary>
         /// BirthDatePicker control.

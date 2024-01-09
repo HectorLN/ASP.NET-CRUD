@@ -9,22 +9,18 @@
         <tr>
             <td>Nombre: </td>
             <td>
-                <asp:TextBox ID="TextBox7" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Nombre") %>' />
+                <telerik:RadTextBox ID="RadTextBox1" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Nombre")%>'></telerik:RadTextBox>
             </td>
         </tr>
         <tr>
             <td>Puesto:</td>
             <td>
+                <telerik:RadDropDownList ID="RadDropDownList1" runat="server"  DataSourceID="SqlDataSource1" DataTextField="puesto" DefaultMessage="Selecciona un puesto"
+                    DataValueField="puesto" AppendDataBoundItems="true"></telerik:RadDropDownList>
 
-                <asp:DropDownList ID="DropEmpleado" runat="server" DataSourceID="SqlDataSource1" DataTextField="puesto" DefaultMessage="Selecciona un puesto"
+                <%--<asp:DropDownList ID="DropEmpleado" runat="server" DataSourceID="SqlDataSource1" DataTextField="puesto" DefaultMessage="Selecciona un puesto"
                     DataValueField="puesto" AppendDataBoundItems="true">
-                </asp:DropDownList>
-
-                <%--<telerik:RadDropDownList RenderMode="Lightweight" ID="RadDropDownList2" runat="server" Width="220px"
-                    DropDownHeight="200" DataSourceID="SqlDataSource1" DataTextField="puesto" DefaultMessage="Selecciona un puesto"
-                    DataValueField="puesto" OnItemSelected="RadDropDownList2_ItemSelected">
-                </telerik:RadDropDownList>--%>
-
+                </asp:DropDownList>--%>
             </td>
         </tr>
         <tr>
