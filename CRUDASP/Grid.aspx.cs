@@ -27,6 +27,7 @@ namespace CRUDASP
                 string LoggedUser = Session["LoggedIn"].ToString();
                 lbl_bienvenida.Text = ("Bienvenido/a " + LoggedUser);
             }
+            
         }
 
         protected void Page_Init(object sender, EventArgs e)
@@ -107,10 +108,12 @@ namespace CRUDASP
                 con.Close();
                 Response.Redirect("Grid.aspx");
             }
-             if (e.CommandName == "btn_editar_empleado")
+            if(e.CommandName == "btn_editar_empleado")
             {
-                
+
             }
+
+
         }
 
         protected void RadGrid1_DeleteCommand(object sender, GridCommandEventArgs e)
@@ -129,8 +132,8 @@ namespace CRUDASP
 
         protected void RadGrid1_PreRender(object sender, EventArgs e)
         {
-            //GridItem firstItem = RadGrid1.Items[0];
-            //firstItem.FireCommandEvent("RowClick","");
+          
         }
+
     }
 }

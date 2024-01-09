@@ -11,7 +11,7 @@ namespace CRUDASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RadTextBox1.Focus();
         }
 
         protected void RadDropDownList2_ItemSelected(object sender, Telerik.Web.UI.DropDownListEventArgs e)
