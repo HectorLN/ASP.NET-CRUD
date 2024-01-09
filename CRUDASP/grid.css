@@ -1,0 +1,115 @@
+﻿main {
+    left: 0;
+    top: 0;
+}
+
+.wrapper {
+    height: 90vh;
+    width: 100vw;
+}
+
+    .wrapper > article {
+        display: grid;
+        height: -webkit-fit-content;
+        width: -webkit-fill-available;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 5fr;
+    }
+
+        .wrapper > article > section {
+            height: 100%;
+            padding: 3vmin;
+        }
+
+.barra-lateral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -10px 0 3px -9px grey, inset 0px -10px 3px -9px grey;
+}
+
+    .barra-lateral > img {
+        height: 5vmin;
+    }
+
+.barra-superior {
+    background-color: #e8f7fd;
+    font-weight: bold;
+}
+
+.barra-principal {
+    background-color: #f8fdff;
+}
+
+.imagen_empleado {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    max-height: 10vmin;
+    max-width: 10vmin;
+    border: 5px solid #d1d5da;
+    margin-top: -10px;
+}
+.datos-empleado {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.datos-empleado-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 120px
+}
+
+.barra-inferior {
+    background-color: #f6f6f6;
+    box-shadow: inset -10px 0 3px -9px grey;
+    display: flex;
+    align-items: center;
+    padding-top: 2vmin;
+    flex-direction: column;
+}
+
+html .RadButton_Default.rbLinkButton {
+    background-color: #38b6ff;
+    border-radius: 25px;
+    color: white;
+    font-family: sans-serif;
+    width: 18vmin;
+    background-image: linear-gradient(#38b6ff,#458ab2);
+    padding: 3px;
+    margin-bottom: 9px;
+}
+
+    html .RadButton_Default.rbLinkButton:hover {
+        background-image: linear-gradient(#7ebce0,#458ab2);
+        color: white;
+    }
+
+    html .RadButton_Default.rbLinkButton ~ .RadButton_Default.rbLinkButton {
+        background-color: #38b6ff;
+        border-radius: 25px;
+        color: white;
+        font-family: sans-serif;
+        width: 18vmin;
+        background-image: linear-gradient(#b9dcf1,#a8bbc5);
+    }
+
+        html .RadButton_Default.rbLinkButton ~ .RadButton_Default.rbLinkButton:hover {
+            background-image: linear-gradient(#7ebce0,#458ab2);
+            color: white;
+        }
+
+div.RadGrid_Default .rgHeader, div.RadGrid_Default th.rgResizeCol {
+    background-image: none;
+    background-color: #6C9AB2;
+}
+
+#ctl00_MainContent_NombreLabel {
+    font-size: 20px;
+}
+
+#ctl00_MainContent_PuestoLabel, #ctl00_MainContent_FechaLabel {
+    font-size: 20px;
+}
