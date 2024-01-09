@@ -206,21 +206,23 @@
                                     <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
 
                                     <Columns>
-                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
+                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="Numero de empleado" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="nombre" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
+                                        <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="Nombre" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="puesto" FilterControlAltText="Filter puesto column" HeaderText="puesto" ShowNoSortIcon="False" SortExpression="puesto" UniqueName="puesto">
+                                        <telerik:GridBoundColumn DataField="puesto" FilterControlAltText="Filter puesto column" HeaderText="Puesto" ShowNoSortIcon="False" SortExpression="puesto" UniqueName="puesto">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="fecha_ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
+                                        <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="Fecha de ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
                                         </telerik:GridBoundColumn>
                                         <telerik:GridButtonColumn UniqueName="BotonEliminar" ButtonType="FontIconButton" CommandName="Delete" ConfirmText="" ConfirmDialogType="RadWindow"
                                             ConfirmTitle="Eliminar" ConfirmTextFields="nombre" ConfirmTextFormatString="Desea eliminar a <b>{0}</b>?" />
                                     </Columns>
 
-                                    <EditFormSettings>
-                                        <EditColumn ShowNoSortIcon="False"></EditColumn>
+                                    <EditFormSettings UserControlName="TemplateController.ascx" EditFormType="WebUserControl">
+                                        <EditColumn ShowNoSortIcon="False" UniqueName="EditColumn1"></EditColumn>
                                     </EditFormSettings>
+
+
                                     <ItemStyle BackColor="White" />
                                     <AlternatingItemStyle BackColor="#E0E0E0" />
                                     <EditItemStyle BackColor="#E8F7FD" />
@@ -259,11 +261,11 @@
                                     <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
 
                                     <Columns>
-                                        <telerik:GridBoundColumn DataField="id_nomina" DataType="System.Int32" FilterControlAltText="Filter id_nomina column" HeaderText="id_nomina" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_nomina" UniqueName="id_nomina">
+                                        <telerik:GridBoundColumn DataField="id_nomina" DataType="System.Int32" FilterControlAltText="Filter id_nomina column" HeaderText="Nomina" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_nomina" UniqueName="id_nomina">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
+                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="Numero de empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="salario" DataType="System.Decimal" FilterControlAltText="Filter salario column" HeaderText="salario" ShowNoSortIcon="False" SortExpression="salario" UniqueName="salario">
+                                        <telerik:GridBoundColumn DataField="salario" DataType="System.Decimal" FilterControlAltText="Filter salario column" HeaderText="Sueldo" ShowNoSortIcon="False" SortExpression="salario" UniqueName="salario">
                                         </telerik:GridBoundColumn>
                                     </Columns>
 

@@ -69,7 +69,83 @@ namespace CRUDASP
                 }
                 con.Close();
             }
+            if (e.CommandName == "btn_agregar_empleado")
+            {
+                // execute some logic
+                UserControl userControl = (UserControl)e.Item.FindControl(GridEditFormItem.EditFormUserControlID);
+                //Update new values
+                Hashtable newValues = new Hashtable();
 
+                newValues["nombre"] = (userControl.FindControl("TextBox7") as TextBox).Text;
+                newValues["puesto"] = (userControl.FindControl("DropEmpleado") as DropDownList).SelectedItem.Value;
+                newValues["fecha_ingreso"] = (userControl.FindControl("BirthDatePicker") as RadDatePicker).SelectedDate.ToString();
+
+                string queryString =
+               "SELECT id_puesto FROM tbl_puesto WHERE puesto = '" + newValues["puesto"] + "'";
+                SqlCommand command = new SqlCommand(
+                    queryString, con);
+                con.Open();
+
+                var id_puesto = 0;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        id_puesto = int.Parse("" + reader[0]);
+                    }
+                }
+
+                SqlCommand cmd = new SqlCommand("sp_create_empleado", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = newValues["nombre"];
+                cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value =id_puesto;
+                cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
+                cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = newValues["fecha_ingreso"];
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            if (e.CommandName == "btn_editar_empleado")
+            {
+                // execute some logic
+                UserControl userControl = (UserControl)e.Item.FindControl(GridEditFormItem.EditFormUserControlID);
+                //Update new values
+                Hashtable newValues = new Hashtable();
+                var editableItem = ((GridEditableItem)e.Item);
+                editableItem.ExtractValues(newValues);
+
+                var id_empleado = (int)editableItem.GetDataKeyValue("id_empleado");
+                newValues["nombre"] = (userControl.FindControl("TextBox7") as TextBox).Text;
+                newValues["puesto"] = (userControl.FindControl("DropEmpleado") as DropDownList).SelectedItem.Value;
+                newValues["fecha_ingreso"] = (userControl.FindControl("BirthDatePicker") as RadDatePicker).SelectedDate.ToString();
+
+                string queryString =
+               "SELECT id_puesto FROM tbl_puesto WHERE puesto = '" + newValues["puesto"] + "'";
+                SqlCommand command = new SqlCommand(
+                    queryString, con);
+                con.Open();
+
+                var id_puesto = 0;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        id_puesto = int.Parse("" + reader[0]);
+                    }
+                }
+                SqlCommand cmd = new SqlCommand("sp_update", con);
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Id_empleado", SqlDbType.Int).Value = id_empleado;
+                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = newValues["nombre"];
+                cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = id_puesto;
+                cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = newValues["fecha_ingreso"];
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
         }
 
         protected void RadGrid1_DeleteCommand(object sender, GridCommandEventArgs e)
