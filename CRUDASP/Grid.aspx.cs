@@ -49,9 +49,9 @@ namespace CRUDASP
                 string fecha = item["fecha_ingreso"].Text;
                 string id = item["id_empleado"].Text;
 
-                NombreLabel.Text = nombre;
-                PuestoLabel.Text = puesto;
-                FechaLabel.Text = "Empleado desde " + fecha;
+                NombreLabel.Text = ("Nombre del empleado: " + nombre);
+                PuestoLabel.Text = ("Puesto: " + puesto);
+                FechaLabel.Text = "Empleado desde: " + fecha;
 
                 string queryString =
                 "SELECT foto FROM tbl_empleado WHERE id_empleado = " + id;

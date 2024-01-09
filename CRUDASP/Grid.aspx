@@ -3,103 +3,7 @@
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        body {
-            /*overflow:hidden; */
-        }
-
-        main {
-            left: 0;
-            top: 0;
-        }
-
-        .wrapper {
-            height: 90vh;
-            width: 100vw;
-        }
-
-            .wrapper > article {
-                display: grid;
-                height: -webkit-fit-content;
-                width: -webkit-fill-available;
-                grid-template-columns: 1fr 5fr;
-                grid-template-rows: 1fr 5fr;
-            }
-
-                .wrapper > article > section {
-                    height: 100%;
-                    padding: 3vmin;
-                }
-
-        .barra-lateral {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset -10px 0 3px -9px grey, inset 0px -10px 3px -9px grey;
-        }
-
-            .barra-lateral > img {
-                height: 5vmin;
-            }
-
-        .barra-superior {
-            background-color: #e8f7fd;
-        }
-
-        .barra-principal {
-            background-color: #f8fdff;
-        }
-
-        .imagen_empleado {
-            border-radius: 50%;
-            max-height: 10vmin;
-            max-width: 10vmin;
-        }
-
-        .barra-inferior {
-            background-color: #f6f6f6;
-            box-shadow: inset -10px 0 3px -9px grey;
-            display: flex;
-            align-items: center;
-            padding-top: 2vmin;
-            flex-direction: column;
-        }
-
-        html .RadButton_Default.rbLinkButton {
-            background-color: #38b6ff;
-            border-radius: 25px;
-            color: white;
-            font-family: sans-serif;
-            width: 18vmin;
-            background-image: linear-gradient(#38b6ff,#458ab2);
-            padding: 3px;
-            margin-bottom: 9px;
-        }
-
-            html .RadButton_Default.rbLinkButton:hover {
-                background-image: linear-gradient(#7ebce0,#458ab2);
-                color: white;
-            }
-
-            html .RadButton_Default.rbLinkButton ~ .RadButton_Default.rbLinkButton {
-                background-color: #38b6ff;
-                border-radius: 25px;
-                color: white;
-                font-family: sans-serif;
-                width: 18vmin;
-                background-image: linear-gradient(#b9dcf1,#a8bbc5);
-            }
-
-                html .RadButton_Default.rbLinkButton ~ .RadButton_Default.rbLinkButton:hover {
-                    background-image: linear-gradient(#7ebce0,#458ab2);
-                    color: white;
-                }
-
-        div.RadGrid_Default .rgHeader, div.RadGrid_Default th.rgResizeCol {
-            background-image: none;
-            background-color: #6C9AB2;
-        }
-    </style>
+    <link href="grid.css" rel="stylesheet" type="text/css" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
         <script type="text/javascript">
             function rowDblClick(sender, eventArgs) {
@@ -112,16 +16,7 @@
             }
 
             function rowClick(sender, eventArgs) {
-                var grid = sender.get_masterTableView();
-                console.log(grid);
-                if (grid) {
-                    var data = grid.get_dataItems();
-                    var rows = data[eventArgs.get_itemIndexHierarchical()];
-                    console.log(rows._element.cells[1].innerHTML);
-                    //$('#NombreEmpleadoSuperior')[0].innerHTML = rows._element.cells[1].innerHTML;
-                    //$('#PuestoEmpleadoSuperior')[0].innerHTML = rows._element.cells[2].innerHTML;
-                    //$('#FechaEmpleadoSuperior')[0].innerHTML = 'Empleado desde ' + rows._element.cells[3].innerHTML;
-                }
+
             }
         </script>
     </telerik:RadCodeBlock>
@@ -133,20 +28,18 @@
                 </section>
                 <section class="barra-superior">
 
-                    <div style="margin-bottom: 5vmin">
-                        <b>
-                            <telerik:RadLabel ID="NombreLabel" Text="Usuario" runat="server"></telerik:RadLabel>
-                        </b>
-                    </div>
-                    <div style="display: flex; justify-content: space-between">
-                        <div style="display: flex; justify-content: space-between; width: 70%">
-                            <telerik:RadLabel ID="PuestoLabel" Text="Puesto" runat="server"></telerik:RadLabel>
+                    <div class="datos-empleado">
+                        
+                            <telerik:RadLabel ID="NombreLabel" Text="Nombre del empleado:" runat="server"></telerik:RadLabel>
 
-                            <telerik:RadLabel ID="FechaLabel" Text="Empleado desde " runat="server"></telerik:RadLabel>
-
+                        <div class ="datos-empleado-2">
+                            <telerik:RadLabel ID="PuestoLabel" Text="Puesto: " runat="server"></telerik:RadLabel>
+                            <telerik:RadLabel ID="FechaLabel" Text="Empleado desde: " runat="server"></telerik:RadLabel>
+                            <img id="FotoEmpleado" class="imagen_empleado" src="\Images\default.png" alt="" />
                         </div>
-                        <img id="FotoEmpleado" class="imagen_empleado" src="\Images\default.png" alt="" />
+                        
                     </div>
+                    
                 </section>
                 <section class="barra-inferior">
                     <asp:Label ID="lbl_bienvenida" runat="server" Text=""></asp:Label>
