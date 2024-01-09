@@ -71,12 +71,11 @@
                     <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel2" Transparency="50" runat="server" Skin="MetroTouch">
                     </telerik:RadAjaxLoadingPanel>
                     <br />
-                    <telerik:RadSplitButton ID="RadSplitButton1" runat="server" Text="RadSplitButton">
-                    </telerik:RadSplitButton>
+                    
                     <div style="height: -webkit-fill-available; display: flex; flex-direction: column">
                         <br />
                         <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
-                            <h5>Empleados:</h5>
+                            <h4>Empleados:</h4>
 
                             <!-- Contenido del RADGRID -->
 
@@ -99,13 +98,13 @@
                                     <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
 
                                     <Columns>
-                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
+                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="Número de empleado" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="nombre" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
+                                        <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="Nombre del empleado" ShowNoSortIcon="False" SortExpression="nombre" UniqueName="nombre">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="puesto" FilterControlAltText="Filter puesto column" HeaderText="puesto" ShowNoSortIcon="False" SortExpression="puesto" UniqueName="puesto">
+                                        <telerik:GridBoundColumn DataField="puesto" FilterControlAltText="Filter puesto column" HeaderText="Departamento" ShowNoSortIcon="False" SortExpression="puesto" UniqueName="puesto">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="fecha_ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
+                                        <telerik:GridBoundColumn DataField="fecha_ingreso" DataType="System.DateTime" FilterControlAltText="Filter fecha_ingreso column" HeaderText="Fecha de ingreso" ShowNoSortIcon="False" SortExpression="fecha_ingreso" UniqueName="fecha_ingreso">
                                         </telerik:GridBoundColumn>
                                         <telerik:GridButtonColumn UniqueName="BotonEliminar" ButtonType="FontIconButton" CommandName="Delete" ConfirmText="" ConfirmDialogType="RadWindow"
                                             ConfirmTitle="Eliminar" ConfirmTextFields="nombre" ConfirmTextFormatString="Desea eliminar a <b>{0}</b>?" />
@@ -135,7 +134,7 @@
                         </div>
                         <br />
                         <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
-                            <h5>Nominas:</h5>
+                            <h4>Nominas:</h4>
                             <telerik:RadGrid RenderMode="Lightweight" AllowAutomaticInserts="True" ID="RadGrid2" runat="server" Style="margin-bottom: 0px" ShowHeader="False" CellSpacing="-1"
                                 DataSourceID="SqlDataSource2" GridLines="Both">
                                 <GroupingSettings CollapseAllTooltip="Collapse all groups"></GroupingSettings>
@@ -152,11 +151,11 @@
                                     <ExpandCollapseColumn ShowNoSortIcon="False"></ExpandCollapseColumn>
 
                                     <Columns>
-                                        <telerik:GridBoundColumn DataField="id_nomina" DataType="System.Int32" FilterControlAltText="Filter id_nomina column" HeaderText="id_nomina" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_nomina" UniqueName="id_nomina">
+                                        <telerik:GridBoundColumn DataField="id_nomina" DataType="System.Int32" FilterControlAltText="Filter id_nomina column" HeaderText="Número de nomina" ReadOnly="True" ShowNoSortIcon="False" SortExpression="id_nomina" UniqueName="id_nomina">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="id_empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
+                                        <telerik:GridBoundColumn DataField="id_empleado" DataType="System.Int32" FilterControlAltText="Filter id_empleado column" HeaderText="Número de empleado" ShowNoSortIcon="False" SortExpression="id_empleado" UniqueName="id_empleado">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="salario" DataType="System.Decimal" FilterControlAltText="Filter salario column" HeaderText="salario" ShowNoSortIcon="False" SortExpression="salario" UniqueName="salario">
+                                        <telerik:GridBoundColumn DataField="salario" DataType="System.Decimal" FilterControlAltText="Filter salario column" HeaderText="Sueldo depositado" ShowNoSortIcon="False" SortExpression="salario" UniqueName="salario">
                                         </telerik:GridBoundColumn>
                                     </Columns>
 
