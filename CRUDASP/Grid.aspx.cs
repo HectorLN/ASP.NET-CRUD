@@ -110,6 +110,41 @@ namespace CRUDASP
             }
             if(e.CommandName == "btn_editar_empleado")
             {
+               // // execute some logic
+               // UserControl userControl = (UserControl)e.Item.FindControl(GridEditFormItem.EditFormUserControlID);
+               // //Update new values
+               // Hashtable newValues = new Hashtable();
+
+               // newValues["nombre"] = (userControl.FindControl("RadTextBox1") as RadTextBox).Text;
+               // newValues["puesto"] = (userControl.FindControl("RadDropDownList1") as RadDropDownList).SelectedItem.Value;
+               // newValues["fecha_ingreso"] = (userControl.FindControl("BirthDatePicker") as RadDatePicker).SelectedDate.ToString();
+
+               // string queryString =
+               //"SELECT id_puesto FROM tbl_puesto WHERE puesto = '" + newValues["puesto"] + "'";
+               // SqlCommand command = new SqlCommand(
+               //     queryString, con);
+               // con.Open();
+
+               // var id_puesto = 0;
+
+               // using (SqlDataReader reader = command.ExecuteReader())
+               // {
+               //     while (reader.Read())
+               //     {
+               //         id_puesto = int.Parse("" + reader[0]);
+               //     }
+               // }
+
+               // SqlCommand cmd = new SqlCommand("sp_create_empleado", con);
+               // cmd.CommandType = CommandType.StoredProcedure;
+               // cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = newValues["nombre"];
+               // cmd.Parameters.Add("@Id_puesto", SqlDbType.Int).Value = id_puesto;
+               // cmd.Parameters.Add("@Foto", SqlDbType.VarChar).Value = " ";
+               // cmd.Parameters.Add("@Fecha", SqlDbType.Date).Value = newValues["fecha_ingreso"];
+
+               // cmd.ExecuteNonQuery();
+               // con.Close();
+               // Response.Redirect("Grid.aspx");
 
             }
 

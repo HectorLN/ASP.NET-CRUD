@@ -178,8 +178,7 @@
                     <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel2" Transparency="50" runat="server" Skin="MetroTouch">
                     </telerik:RadAjaxLoadingPanel>
                     <br />
-                    <telerik:RadSplitButton ID="RadSplitButton1" runat="server" Text="RadSplitButton">
-                    </telerik:RadSplitButton>
+                
                     <div style="height: -webkit-fill-available; display: flex; flex-direction: column">
                         <br />
                         <div style="background-color: aliceblue; height: max-content; width: -webkit-fill-available">
