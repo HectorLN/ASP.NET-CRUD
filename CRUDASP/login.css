@@ -53,12 +53,12 @@ html .RadButton_Windows7.rbSkinnedButton {
 }
 
 #ctl00_MainContent_lbl_correo {
-    font-size:25px;
+    font-size: 25px;
     color: #004aad;
 }
 
 #ctl00_MainContent_lbl_contraseña {
-    font-size:25px;
+    font-size: 25px;
     color: #004aad;
 }
 
@@ -82,7 +82,7 @@ html .RadButton_Windows7.rbSkinnedButton {
     align-items: center;
 }
 
-html .RadButton_Default.rbLinkButton {
+#ctl00_MainContent_btn_login {
     border-radius: 30px;
     color: white;
     width: 223px;
@@ -95,20 +95,38 @@ html .RadButton_Default.rbLinkButton {
     font-size: 25px;
 }
 
-    html .RadButton_Default.rbLinkButton:hover {
+    #ctl00_MainContent_btn_login:hover {
         background-image: linear-gradient(white,white);
         border: solid;
         border-color: #004aad;
         color: #004aad;
     }
 
-html body .RadInput_Default .riTextBox{
-   font-size: 18px;
-   width:auto;
-   
+html body .RadInput_Default .riTextBox {
+    font-size: 18px;
+    width: auto;
 }
 
 #ctl00_MainContent_lbl_error {
     font-size: 20px;
-    color:red;
+    color: red;
 }
+
+#recuperar_contra {
+    
+}
+
+#ctl00_MainContent_btn_recuperar {
+    background-image: unset;
+    background-color: transparent;
+    color: #004aad;
+    border: none;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #ctl00_MainContent_btn_recuperar:hover {
+        text-decoration: underline;
+    }

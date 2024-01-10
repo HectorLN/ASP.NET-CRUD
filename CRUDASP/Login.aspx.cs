@@ -48,6 +48,11 @@ namespace CRUDASP
             cmd.Connection.Close();
         }
 
+        protected void recuperar(object sender, EventArgs e)
+        {
+            Response.Redirect("Recover.aspx");
+        }
+
         protected void txt_contraseña_TextChanged(object sender, EventArgs e)
         {
             int tam = txt_contraseña.Text.Length;

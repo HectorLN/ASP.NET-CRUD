@@ -145,6 +145,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="libman.json" />
+    <Content Include="Recover.aspx" />
+    <Content Include="reset.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Login.aspx" />
     <Content Include="login.css" />
@@ -238,6 +240,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Recover.aspx.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recover.aspx.designer.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reset.aspx.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reset.aspx.designer.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

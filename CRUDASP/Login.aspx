@@ -42,15 +42,17 @@
                 <%-- Contraseña campo obligatorio --%>
                 <asp:RequiredFieldValidator ID="PickerRequiredFieldValidator" runat="server" Display="Dynamic"
                     ControlToValidate="txt_contraseña" ErrorMessage="Ingrese una contraseña valida" />
-                 <div id="mensaje_error">
-
+            </div>
+            <div id="mensaje_error">
                 <telerik:RadLabel ID="lbl_error" runat="server"></telerik:RadLabel>
             </div>
+            <div id="recuperar_contra">
+                <telerik:RadButton ID="btn_recuperar" runat="server" Text="Olvidaste tu contraseña?" CausesValidation="false" ButtonType="LinkButton" OnClick="recuperar"></telerik:RadButton>
             </div>
-           
             <%-- Boton de ingresar --%>
             <div id="boton_login">
-                <telerik:RadButton ID="btn_login" OnClick="btn_login_Click" ButtonType="SkinnedButton" runat="server" Text="Ingresar"></telerik:RadButton>
+                <telerik:RadButton ID="btn_login" OnClick="btn_login_Click" ButtonType="SkinnedButton" runat="server" Text="Ingresar">
+                </telerik:RadButton>
             </div>
         </div>
     </div>

@@ -81,6 +81,9 @@ insert into tbl_admin (nombre,email,pass,foto) values (@Nombre,@Email, ENCRYPTBY
 End
 
 exec sp_add_user 'Favio', 'favio@gmail.com', 'sinchoqueno', 'InfoToolsSV', ''
+exec sp_add_user 'John Doe', 'john.doe@gmail.com', 'ILovePuppies83#', 'InfoToolsSV', 'fototest'
+exec sp_add_user 'Frank', 'frank@gmail.com', 'Mermelada_Con_Aguacate78#', 'InfoToolsSV', 'ejemplofoto'
+exec sp_add_User 'Hector Lucero', 'hector@test.com', '1234567890', 'InfoToolsSv', ''
 
  /*Validar admin*/
 create procedure sp_Validate_User
@@ -91,6 +94,8 @@ as
 begin
 select*from tbl_admin where email = @Email and CONVERT(varchar(50), DECRYPTBYPASSPHRASE(@Patron, pass)) = @Pass
 End
+
+select*from tbl_admin where email = 'hector@test.com' and CONVERT(varchar(50), DECRYPTBYPASSPHRASE(@Patron, pass)) = @Pass
 
 /*Cardar datos de la tabla*/
 
@@ -124,7 +129,7 @@ as begin
 delete from tbl_empleado where id_empleado =@Id_empleado
 end
 
-/*Actualizar empleado*/
+/*Actualizar empleado (NO CORRER) */
 create procedure sp_update
 @Id_empleado int,
 @Nombre varchar(max),
@@ -135,6 +140,8 @@ as begin
 update tbl_empleado set  nombre=@Nombre, foto=@Foto, id_puesto=@Id_puesto, fecha_ingreso=@Fecha
 where id_empleado=@Id_empleado
 end
+
+DROP PROCEDURE sp_update
 
 --exec sp_update 2, 'favio rodriguez','oal',1,'2023-09-05'  ejemplo para actualizar
 
